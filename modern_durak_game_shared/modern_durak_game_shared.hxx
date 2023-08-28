@@ -36,6 +36,7 @@
 #include <sstream>
 #include <string>
 #include <variant>
+#include <optional>
 
 // GENERIC GAME MESSAGES
 BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), UnhandledMessageError, (std::string, msg) (std::string, error))

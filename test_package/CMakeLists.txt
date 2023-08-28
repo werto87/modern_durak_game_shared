@@ -1,9 +1,8 @@
-cmake_minimum_required(VERSION 3.15)
-project(PackageTest CXX)
+cmake_minimum_required(VERSION 3.5)
+project(test_package CXX)
 
-find_package(library_name CONFIG REQUIRED)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
 
-
-
-add_executable(example src/example.cpp)
-target_link_libraries(example library_name::library_name)
+add_executable(${PROJECT_NAME} example.cpp)
+target_link_libraries(${PROJECT_NAME} PRIVATE CONAN_PKG::modern_durak_game_shared)

@@ -34,6 +34,7 @@ target_compile_features(${PROJECT_OPTIONS} INTERFACE cxx_std_17)
 
 ######## conan setup
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+#include(conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
 
