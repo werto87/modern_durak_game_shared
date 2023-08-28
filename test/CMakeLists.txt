@@ -5,7 +5,7 @@ main.cxx
 
 target_link_libraries(${TEST_TARGET_NAME}
 ${TARGET_NAME}
- CONAN_PKG::catch2
+
 )
 target_include_directories(${TEST_TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_SOURCE_DIR})
 

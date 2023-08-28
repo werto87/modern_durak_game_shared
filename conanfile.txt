@@ -1,8 +1,0 @@
-[requires]
-catch2/2.13.7
-boost/1.78.0
-durak/0.0.11@werto87/stable
-[generators]
-cmake
-[options]
-boost:header_only=True
