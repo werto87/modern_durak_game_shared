@@ -1,6 +1,4 @@
-#include "include/modern_durak_game_shared/modern_durak_game_shared.hxx"
-//#include "/home/walde/CLionProjects/modern_durak_game_shared/modern_durak_game_shared/modern_durak_game_shared.hxx"
-
+#include "modern_durak_game_shared/modern_durak_game_shared.hxx"
 
 //here to test if the library compiles
 int main(){
