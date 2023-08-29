@@ -17,8 +17,8 @@ class modern_durak_game_shared(ConanFile):
     exports_sources = "modern_durak_game_shared/*"
 
     def requirements(self):
-        self.requires("durak/0.0.11@werto87/stable")
-        self.requires("confu_json/1.0.0")
+        self.requires("durak/[~0]@werto87/stable")
+        self.requires("confu_json/[~1]")
 
     def package(self):
         self.copy("modern_durak_game_shared/modern_durak_game_shared.hxx", dst="include/")
