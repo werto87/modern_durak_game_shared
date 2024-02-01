@@ -3,7 +3,7 @@ include(CheckCXXCompilerFlag)
 
 
 macro(myproject_setup_options)
-    option(myproject_ENABLE_HARDENING "Enable hardening" ON)
+    option(myproject_ENABLE_HARDENING "Enable hardening" OFF)
     option(myproject_ENABLE_FORTIFY_SOURCE_AND_SET_OPTIMAZATION_TO_O0 "Enable fortify source and set optimization to -O0" OFF)
     option(myproject_ENABLE_COVERAGE "Enable coverage reporting" OFF)
     option(myproject_WARNINGS_AS_ERRORS "Treat Warnings As Errors" ON)
