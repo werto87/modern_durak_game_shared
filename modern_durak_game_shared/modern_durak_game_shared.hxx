@@ -1,6 +1,6 @@
 #pragma once
 
-#include PATH_TO_USER_DEFINED_GAME_OPTION
+#include <modern_durak_game_option/userDefinedGameOption.hxx>
 #include <boost/algorithm/string.hpp>
 #include <boost/fusion/adapted/struct/adapt_struct.hpp>
 #include <boost/fusion/adapted/struct/define_struct.hpp>

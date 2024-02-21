@@ -13,12 +13,13 @@ add_library(myproject::modern_durak_game_shared ALIAS modern_durak_game_shared)
 
 find_package(durak)
 find_package(confu_json)
-
+find_package(modern_durak_game_option)
 
 target_link_libraries(modern_durak_game_shared INTERFACE
         durak::durak
         confu_json::confu_json
         Boost::headers
+        modern_durak_game_option::modern_durak_game_option
         )
 
 target_include_directories(modern_durak_game_shared INTERFACE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
