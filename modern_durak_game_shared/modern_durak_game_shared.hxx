@@ -59,24 +59,11 @@ enum struct Move
   AnswerDefendWantsToTakeCardsNo
 };
 
-enum struct TimerType
-{
-  noTimer,
-  resetTimeOnNewRound,
-  addTimeOnNewRound
-};
 }
 
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers,  (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), TimerOption, (shared_class::TimerType, timerType) (uint64_t, timeAtStartInSeconds) (uint64_t, timeForEachRoundInSeconds))
-namespace shared_class
-{
-enum struct OpponentCards
-{
-  showNumberOfOpponentCards,
-  showOpponentCards,
-};
-}
+
+
 
 BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), StartGame, (std::vector<std::string>, players) (shared_class::GameOption, gameOption) (bool, ratedGame))
 BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), StartGameError, (std::string, error))
