@@ -1,6 +1,5 @@
 #pragma once
 
-#include <modern_durak_game_option/userDefinedGameOption.hxx>
 #include <boost/algorithm/string.hpp>
 #include <boost/fusion/adapted/struct/adapt_struct.hpp>
 #include <boost/fusion/adapted/struct/define_struct.hpp>
@@ -34,17 +33,12 @@
 #include <durak/gameOption.hxx>
 #include <iostream>
 #include <map>
+#include <modern_durak_game_option/userDefinedGameOption.hxx>
+#include <optional>
 #include <sstream>
 #include <string>
 #include <variant>
-#include <optional>
 
-// GENERIC GAME MESSAGES
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), UnhandledMessageError, (std::string, msg) (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), LeaveGameServer, (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), LeaveGameSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), LeaveGameError, )
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), GameOver, (std::string, gameName) (bool, ratedGame) (std::vector<std::string>, winners) (std::vector<std::string>, losers) (std::vector<std::string>, draws))
 typedef std::vector<std::pair<std::string, long long int> > UserTimeMilliseconds;
 namespace shared_class
 {
@@ -58,27 +52,8 @@ enum struct Move
   AnswerDefendWantsToTakeCardsYes,
   AnswerDefendWantsToTakeCardsNo
 };
-
 }
-
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers,  (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
-
-
-
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), StartGame, (std::vector<std::string>, players) (shared_class::GameOption, gameOption) (bool, ratedGame))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), StartGameError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), StartGameSuccess, (std::string, gameName))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), GameOverSuccess, )
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), GameOverError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), UserLeftGame, (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), UserLeftGameSuccess, (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), UserLeftGameError, (std::string, accountName) (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), ConnectToGame, (std::string, accountName) (std::string, gameName))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), ConnectToGameError, (std::string, error))
-BOOST_FUSION_DEFINE_STRUCT ((matchmaking_game), ConnectToGameSuccess, )
-// GENERIC GAME MESSAGES //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// MODERN DURAK TYPES
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers, (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttack, (std::vector<durak::Card>, cards))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackSuccess, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackError, (std::string, error))
@@ -109,7 +84,6 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverDraw, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGameError, (std::string, error))
 
-
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAllowedMoves, (std::vector<shared_class::Move>, allowedMoves))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UnhandledEventError, (std::string, unhandledEvent) (std::string, reason))
 
@@ -118,4 +92,3 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), UnhandledEventError, (std::string, u
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMove, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveSuccess, (shared_class::Move, nextMove) (std::optional<durak::Card>, card))
-
