@@ -53,6 +53,11 @@ enum struct Move
   AnswerDefendWantsToTakeCardsNo
 };
 }
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4003)
+#endif
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakTimers, (UserTimeMilliseconds, runningTimeUserTimePointMilliseconds) (UserTimeMilliseconds, pausedTimeUserDurationMilliseconds))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttack, (std::vector<durak::Card>, cards))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAttackSuccess, )
@@ -92,3 +97,8 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), UnhandledEventError, (std::string, u
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMove, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveSuccess, (shared_class::Move, nextMove) (std::optional<durak::Card>, card))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), CombinationSolved, (std::string, accountName))
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif

@@ -18,4 +18,4 @@ class Project(ConanFile):
     def requirements(self):
         self.requires("modern_durak_game_option/latest")
         self.requires("catch2/2.13.9")
-        self.requires("durak/1.0.5")        
+        self.requires("durak/1.2.0")        
