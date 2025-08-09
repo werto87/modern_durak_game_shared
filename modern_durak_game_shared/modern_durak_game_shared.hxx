@@ -99,7 +99,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveError, (std::string, er
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveSuccess, (shared_class::Move, nextMove) (std::optional<durak::Card>, card))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CombinationSolved, (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GetCombinationSolved, (std::string, accountName))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), CombinationsSolved, (size_t, combinationsSolved))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), CombinationsSolved, (std::string, accountName) (size_t, combinationsSolved))
 
 #ifdef _MSC_VER
 #pragma warning(pop)
