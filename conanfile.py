@@ -14,6 +14,7 @@ class Project(ConanFile):
     def configure(self):
         self.options["catch2"].with_main = True
         self.options["catch2"].with_benchmark = True
+        self.options["boost"].header_only = False
 
     def requirements(self):
         self.requires("modern_durak_game_option/latest")

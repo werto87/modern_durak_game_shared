@@ -23,7 +23,6 @@
 #include <boost/hana/pair.hpp>
 #include <boost/hana/tuple.hpp>
 #include <boost/hana/type.hpp>
-#include <boost/json.hpp>
 #include <boost/mpl/for_each.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/range_c.hpp>
@@ -89,7 +88,7 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakGameOverDraw, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGame, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakLeaveGameError, (std::string, error))
 
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAllowedMoves, (std::vector<shared_class::Move>, allowedMoves))
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakAllowedMoves, (bool, hasToMove) (std::vector<shared_class::Move>, allowedMoves))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), UnhandledEventError, (std::string, unhandledEvent) (std::string, reason))
 
 // MODERN DURAK TYPES //////////////////////////////////////////////////////////////////////////////////////////////
