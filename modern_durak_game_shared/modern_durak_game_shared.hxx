@@ -96,7 +96,10 @@ BOOST_FUSION_DEFINE_STRUCT ((shared_class), UnhandledEventError, (std::string, u
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMove, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveError, (std::string, error))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakNextMoveSuccess, (shared_class::Move, nextMove) (std::optional<durak::Card>, card))
-BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakWaitingForEndOfRoundAnimation, (bool, defendTakesCardsFromTable))
+
+using PlayerNameAndCards = std::tuple<std::string, std::vector<std::optional<durak::Card> > >;
+
+BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakWaitingForEndOfRoundAnimation, (bool, defendTakesCardsFromTable) (PlayerNameAndCards, playerNameAndCardsToDraw))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), DurakDoneWithEndOfRoundAnimation, )
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), CombinationSolved, (std::string, accountName))
 BOOST_FUSION_DEFINE_STRUCT ((shared_class), GetCombinationSolved, (std::string, accountName))
