@@ -38,7 +38,7 @@
 #include <string>
 #include <variant>
 
-typedef std::vector<std::pair<std::string, long long int> > UserTimeMilliseconds;
+typedef std::vector<std::pair<std::string, uint64_t> > UserTimeMilliseconds;
 namespace shared_class
 {
 enum struct Move
